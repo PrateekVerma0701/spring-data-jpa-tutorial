@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.prateek.people.management.app</groupId>
-	<artifactId>spring-data-jpa-tutorial</artifactId>
+	<artifactId>spring-data-jpa-crud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-data-jpa-tutorial</name>
+	<name>spring-data-jpa-crud</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

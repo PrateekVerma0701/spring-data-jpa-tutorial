@@ -13,13 +13,13 @@ import com.prateek.people.management.app.entities.Person;
 import com.prateek.people.management.app.service.PeopleMangementService;
 
 @SpringBootApplication
-public class SpringDataJpaTutorialApplication implements CommandLineRunner {
+public class SpringDataJpaCrudApplication implements CommandLineRunner {
 
 	@Autowired
 	private PeopleMangementService peopleMangementService;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDataJpaTutorialApplication.class, args);
+		SpringApplication.run(SpringDataJpaCrudApplication.class, args);
 	}
 
 	@Override
