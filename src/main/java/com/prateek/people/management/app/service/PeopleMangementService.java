@@ -14,4 +14,5 @@ public interface PeopleMangementService {
 
 	void deletePersonEntity(Person person);
 
+	Person updatePersonEmailbyId(Integer id, String email);
 }

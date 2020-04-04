@@ -1,6 +1,7 @@
 package com.prateek.people.management.app.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,15 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 	@Override
 	public void deletePersonEntity(Person person) {
 		peopleManagementRepositry.delete(person);
+	}
+
+	@Override
+	public Person updatePersonEmailbyId(Integer id, String email) {
+		Optional<Person> personToBeUpdated = peopleManagementRepositry.findById(id);
+		if (personToBeUpdated.isPresent()) {
+			personToBeUpdated.get().setEmail(email);
+		}
+		return peopleManagementRepositry.save(personToBeUpdated.get());
 	}
 
 }

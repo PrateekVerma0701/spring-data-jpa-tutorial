@@ -39,6 +39,19 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 
 		// delete a person record with id - peopleManagementRepositry.delete(person)
 		deletePersonEntity();
+
+		/*
+		 * update person email by id i - peopleManagementRepositry.findById(id) ii
+		 * -update the person object with email id iii - save person object
+		 */
+		updatePersonEmailbyId();
+	}
+
+	private void updatePersonEmailbyId() {
+		Person updatedPerson = peopleMangementService.updatePersonEmailbyId(1, "prateek.verma@yahoo.com");
+		System.out.println("Updating Person Email with Id" + updatedPerson.getId());
+		System.out.println(updatedPerson);
+
 	}
 
 	private void deletePersonEntity() {
@@ -49,10 +62,8 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 
 	private void getPersonByIds() {
 		List<Integer> ids = new ArrayList<>();
-
 		ids.add(2);
 		ids.add(3);
-
 		Iterable<Person> personList = peopleMangementService.getPersonByIds(ids);
 
 		System.out.println("Retrieving person list with list of ids");
