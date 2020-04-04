@@ -48,7 +48,7 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 	}
 
 	private void updatePersonEmailbyId() {
-		Person updatedPerson = peopleMangementService.updatePersonEmailbyId(1, "prateek.verma@gmail.com");
+		Person updatedPerson = peopleMangementService.updatePersonEmailbyId(1, "prateek.verma@yahoo.com");
 		System.out.println("Updating Person Email with Id : " + updatedPerson.getId());
 		System.out.println(updatedPerson);
 
@@ -82,9 +82,13 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 	private void createPersons() {
 		List<Person> personList = new ArrayList<>();
 		Person person1 = new Person("Ankit", "Verma", "ankit.verma@gmail.com", new Date());
-		Person person2 = new Person("Poorva", "Verma", "poorva.verma@gmail.com", new Date());
+		Person person2 = new Person("Sanya", "Verma", "sanya.verma@yahoo.com", new Date());
+		Person person3 = new Person("Pulkit", "Mehrotra", "pulkit.mehrotra@outlook.com", new Date());
+		Person person4 = new Person("Poorva", "Tripathi", "poorva.tripathi@gmail.com", new Date());
 		personList.add(person1);
 		personList.add(person2);
+		personList.add(person3);
+		personList.add(person4);
 
 		Iterable<Person> createPersons = peopleMangementService.createPersons(personList);
 
