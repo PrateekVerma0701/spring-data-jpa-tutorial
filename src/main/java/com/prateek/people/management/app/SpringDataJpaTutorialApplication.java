@@ -43,7 +43,11 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 		personList.add(person1);
 		personList.add(person2);
 
-		System.out.println(peopleMangementService.createPersons(personList));
+		Iterable<Person> createPersons = peopleMangementService.createPersons(personList);
+
+		for (Person person : createPersons) {
+			System.out.println(person);
+		}
 
 	}
 

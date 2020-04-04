@@ -8,6 +8,6 @@ public interface PeopleMangementService {
 
 	Person createPerson(Person person);
 
-	List<Person> createPersons(List<Person> personList);
+	Iterable<Person> createPersons(List<Person> personList);
 
 }

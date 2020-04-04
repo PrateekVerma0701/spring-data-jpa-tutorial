@@ -22,8 +22,8 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 	}
 
 	@Override
-	public List<Person> createPersons(List<Person> personList) {
-		return (List<Person>) peopleManagementRepositry.saveAll(personList);
+	public Iterable<Person> createPersons(List<Person> personList) {
+		return peopleManagementRepositry.saveAll(personList);
 	}
 
 }
