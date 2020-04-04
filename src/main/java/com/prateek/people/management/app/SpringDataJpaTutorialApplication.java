@@ -48,8 +48,8 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 	}
 
 	private void updatePersonEmailbyId() {
-		Person updatedPerson = peopleMangementService.updatePersonEmailbyId(1, "prateek.verma@yahoo.com");
-		System.out.println("Updating Person Email with Id" + updatedPerson.getId());
+		Person updatedPerson = peopleMangementService.updatePersonEmailbyId(1, "prateek.verma@gmail.com");
+		System.out.println("Updating Person Email with Id : " + updatedPerson.getId());
 		System.out.println(updatedPerson);
 
 	}

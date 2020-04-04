@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +18,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "person_table")
+@DynamicUpdate
 public class Person {
 
 	public Person() {
