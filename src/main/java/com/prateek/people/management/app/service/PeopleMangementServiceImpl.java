@@ -1,5 +1,7 @@
 package com.prateek.people.management.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 	@Override
 	public Person createPerson(Person person) {
 		return peopleManagementRepositry.save(person);
+	}
+
+	@Override
+	public List<Person> createPersons(List<Person> personList) {
+		return (List<Person>) peopleManagementRepositry.saveAll(personList);
 	}
 
 }

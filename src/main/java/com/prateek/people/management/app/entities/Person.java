@@ -43,4 +43,9 @@ public class Person {
 	@Column(name = "creation_date")
 	private Date creationDate;
 
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", creationDate=" + creationDate + "]";
+	}
 }
