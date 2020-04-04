@@ -1,8 +1,9 @@
 package com.prateek.people.management.app.service;
 
-import org.springframework.stereotype.Service;
+import com.prateek.people.management.app.entities.Person;
 
-@Service
-public class PeopleMangementService {
+public interface PeopleMangementService {
+
+	Person createPerson(Person person);
 
 }

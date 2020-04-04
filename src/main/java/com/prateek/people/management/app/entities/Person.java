@@ -9,16 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
 @Table(name = "person_table")
 public class Person {
+
+	public Person(String firstName, String lastName, String email, Date creationDate) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.creationDate = creationDate;
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
