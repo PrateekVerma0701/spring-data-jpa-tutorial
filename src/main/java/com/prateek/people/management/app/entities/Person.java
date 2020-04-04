@@ -18,6 +18,10 @@ import lombok.Setter;
 @Table(name = "person_table")
 public class Person {
 
+	public Person() {
+
+	}
+
 	public Person(String firstName, String lastName, String email, Date creationDate) {
 		super();
 		this.firstName = firstName;

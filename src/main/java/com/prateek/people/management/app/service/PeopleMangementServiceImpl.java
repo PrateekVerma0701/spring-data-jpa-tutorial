@@ -26,4 +26,9 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 		return peopleManagementRepositry.saveAll(personList);
 	}
 
+	@Override
+	public Iterable<Person> getPersonByIds(List<Integer> ids) {
+		return peopleManagementRepositry.findAllById(ids);
+	}
+
 }

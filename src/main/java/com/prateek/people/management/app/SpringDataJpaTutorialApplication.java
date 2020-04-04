@@ -25,8 +25,34 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		// create one person record - peopleManagementRepositry.save(person)
 		createPerson();
+
+		// create list of person record - peopleManagementRepositry.saveAll(personList)
 		createPersons();
+
+		/*
+		 * retrieve person record with list of id -
+		 * peopleManagementRepositry.findAllById(Id's)
+		 */
+		getPersonByIds();
+	}
+
+	private void getPersonByIds() {
+		List<Integer> ids = new ArrayList<>();
+
+		ids.add(2);
+		ids.add(3);
+
+		Iterable<Person> personList = peopleMangementService.getPersonByIds(ids);
+
+		System.out.println("Retrieving person list with list of ids");
+
+		for (Person person : personList) {
+			System.out.println(person);
+		}
+
 	}
 
 	public void createPerson() {

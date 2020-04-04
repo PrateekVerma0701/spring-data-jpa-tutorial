@@ -10,4 +10,6 @@ public interface PeopleMangementService {
 
 	Iterable<Person> createPersons(List<Person> personList);
 
+	Iterable<Person> getPersonByIds(List<Integer> ids);
+
 }
