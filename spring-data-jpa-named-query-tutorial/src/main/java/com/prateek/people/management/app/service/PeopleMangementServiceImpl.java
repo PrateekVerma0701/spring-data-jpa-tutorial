@@ -17,12 +17,12 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 
 	@Override
 	public List<Person> getPersonInfoByLastName(String lastName) {
-		return peopleManagementRepositry.findByLastName(lastName);
+		return peopleManagementRepositry.getPersonInfoByLastName(lastName);
 	}
 
 	@Override
 	public List<Person> getPersonInfoByFirstNameAndEmail(String firstName, String email) {
-		return peopleManagementRepositry.findByFirstNameAndEmail(firstName, email);
+		return peopleManagementRepositry.getPersonInfoByFirstNameAndEmail(firstName, email);
 	}
 
 }

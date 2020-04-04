@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
@@ -19,6 +21,9 @@ import lombok.Setter;
 @Entity
 @Table(name = "person_table")
 @DynamicUpdate
+@NamedQueries(value = {
+		@NamedQuery(name = "Person.getPersonInfoByLastName", query = "SELECT p FROM Person p WHERE p.lastName = ?1"),
+		@NamedQuery(name = "Person.getPersonInfoByFirstNameAndEmail", query = "SELECT p FROM Person p WHERE p.firstName = ?1 AND p.email = ?2") })
 public class Person {
 
 	public Person() {

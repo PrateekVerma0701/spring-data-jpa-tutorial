@@ -8,8 +8,8 @@ import com.prateek.people.management.app.entities.Person;
 
 public interface PeopleManagementRepositry extends CrudRepository<Person, Integer> {
 
-	List<Person> findByLastName(String lastName);
+	List<Person> getPersonInfoByLastName(String lastName);
 
-	List<Person> findByFirstNameAndEmail(String firstName, String email);
+	List<Person> getPersonInfoByFirstNameAndEmail(String firstName, String email);
 
 }

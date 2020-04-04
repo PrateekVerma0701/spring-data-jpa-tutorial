@@ -11,13 +11,13 @@ import com.prateek.people.management.app.entities.Person;
 import com.prateek.people.management.app.service.PeopleMangementService;
 
 @SpringBootApplication
-public class SpringDataJpaMethodQueryApplication implements CommandLineRunner {
+public class SpringDataJpaNamedQueryApplication implements CommandLineRunner {
 
 	@Autowired
 	private PeopleMangementService peopleMangementService;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDataJpaMethodQueryApplication.class, args);
+		SpringApplication.run(SpringDataJpaNamedQueryApplication.class, args);
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class SpringDataJpaMethodQueryApplication implements CommandLineRunner {
 	private void getPersonInfoByFirstNameAndEmail() {
 		List<Person> personList = peopleMangementService.getPersonInfoByFirstNameAndEmail("Poorva",
 				"poorva.tripathi@gmail.com");
-		System.out.println("Retrieving person list by firstName and email");
+		System.out.println("\n\nRetrieving person list by firstName and email");
 		personList.forEach(System.out::println);
 	}
 
