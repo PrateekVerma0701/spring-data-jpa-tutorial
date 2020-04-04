@@ -12,4 +12,6 @@ public interface PeopleMangementService {
 
 	Iterable<Person> getPersonByIds(List<Integer> ids);
 
+	void deletePersonEntity(Person person);
+
 }

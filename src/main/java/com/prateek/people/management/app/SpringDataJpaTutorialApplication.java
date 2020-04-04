@@ -1,7 +1,6 @@
 package com.prateek.people.management.app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -37,6 +36,15 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 		 * peopleManagementRepositry.findAllById(Id's)
 		 */
 		getPersonByIds();
+
+		// delete a person record with id - peopleManagementRepositry.delete(person)
+		deletePersonEntity();
+	}
+
+	private void deletePersonEntity() {
+		Person person = new Person();
+		person.setId(3);
+		peopleMangementService.deletePersonEntity(person);
 	}
 
 	private void getPersonByIds() {
@@ -52,17 +60,15 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 		for (Person person : personList) {
 			System.out.println(person);
 		}
-
 	}
 
-	public void createPerson() {
+	private void createPerson() {
 		Person person1 = new Person("Prateek", "Verma", "prateek.verma@gmail.com", new Date());
 		Person personDb = peopleMangementService.createPerson(person1);
 		System.out.println(personDb);
 	}
 
-	public void createPersons() {
-
+	private void createPersons() {
 		List<Person> personList = new ArrayList<>();
 		Person person1 = new Person("Ankit", "Verma", "ankit.verma@gmail.com", new Date());
 		Person person2 = new Person("Poorva", "Verma", "poorva.verma@gmail.com", new Date());
@@ -74,7 +80,6 @@ public class SpringDataJpaTutorialApplication implements CommandLineRunner {
 		for (Person person : createPersons) {
 			System.out.println(person);
 		}
-
 	}
 
 }

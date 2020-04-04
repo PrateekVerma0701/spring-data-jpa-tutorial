@@ -14,8 +14,6 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 	@Autowired
 	PeopleManagementRepositry peopleManagementRepositry;
 
-	// Create entry in a database - Create Operation
-
 	@Override
 	public Person createPerson(Person person) {
 		return peopleManagementRepositry.save(person);
@@ -29,6 +27,11 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 	@Override
 	public Iterable<Person> getPersonByIds(List<Integer> ids) {
 		return peopleManagementRepositry.findAllById(ids);
+	}
+
+	@Override
+	public void deletePersonEntity(Person person) {
+		peopleManagementRepositry.delete(person);
 	}
 
 }
