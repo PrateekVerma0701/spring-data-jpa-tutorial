@@ -10,4 +10,6 @@ public interface PeopleMangementService {
 
 	List<Person> getPersonInfoByFirstNameAndEmail(String firstName, String email);
 
+	List<Person> getPersonInfoByLastNameOrFirstName(String lastName, String firstName);
+
 }

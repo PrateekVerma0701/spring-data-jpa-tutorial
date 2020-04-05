@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import com.prateek.people.management.app.entities.Person;
 
@@ -18,5 +19,9 @@ public interface PeopleManagementRepositry extends CrudRepository<Person, Intege
 
 	@Query(value = "SELECT p FROM Person p WHERE p.firstName = ?1 AND p.email = ?2")
 	List<Person> getPersonInfoByFirstNameAndEmail(String firstName, String email);
+
+	@Query(value = "SELECT p FROM Person p WHERE p.firstName=:firstname AND p.lastName=:lastname")
+	List<Person> getPersonInfoByLastNameOrFirstName(@Param("lastname") String lastname,
+			@Param("firstname") String firstName);
 
 }

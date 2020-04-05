@@ -26,12 +26,20 @@ public class SpringDataJpaQueryApplication implements CommandLineRunner {
 		getPersonInfoByLastName();
 
 		getPersonInfoByFirstNameAndEmail();
+
+		getPersonInfoByLastNameOrFirstName();
+	}
+
+	private void getPersonInfoByLastNameOrFirstName() {
+		List<Person> personList = peopleMangementService.getPersonInfoByLastNameOrFirstName("Mehrotra", "Pulkit");
+		System.out.println("\n\nRetrieving person list by lastName OR firstName");
+		personList.forEach(System.out::println);
 	}
 
 	private void getPersonInfoByFirstNameAndEmail() {
 		List<Person> personList = peopleMangementService.getPersonInfoByFirstNameAndEmail("Poorva",
 				"poorva.tripathi@gmail.com");
-		System.out.println("\n\nRetrieving person list by firstName and email");
+		System.out.println("\n\nRetrieving person list by firstName AND email");
 		personList.forEach(System.out::println);
 	}
 

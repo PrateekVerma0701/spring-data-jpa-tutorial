@@ -25,4 +25,9 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 		return peopleManagementRepositry.getPersonInfoByFirstNameAndEmail(firstName, email);
 	}
 
+	@Override
+	public List<Person> getPersonInfoByLastNameOrFirstName(String lastName, String firstName) {
+		return peopleManagementRepositry.getPersonInfoByLastNameOrFirstName(lastName, firstName);
+	}
+
 }
