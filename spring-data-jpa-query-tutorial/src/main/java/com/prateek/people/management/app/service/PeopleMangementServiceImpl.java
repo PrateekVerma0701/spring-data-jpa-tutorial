@@ -30,4 +30,9 @@ public class PeopleMangementServiceImpl implements PeopleMangementService {
 		return peopleManagementRepositry.getPersonInfoByLastNameOrFirstName(lastName, firstName);
 	}
 
+	@Override
+	public void updatePersonEmailById(int id, String newEmail) {
+		peopleManagementRepositry.updatePersonEmailById(id, newEmail);
+	}
+
 }

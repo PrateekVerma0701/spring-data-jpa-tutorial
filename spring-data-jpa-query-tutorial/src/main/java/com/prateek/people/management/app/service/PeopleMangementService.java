@@ -12,4 +12,6 @@ public interface PeopleMangementService {
 
 	List<Person> getPersonInfoByLastNameOrFirstName(String lastName, String firstName);
 
+	void updatePersonEmailById(int id, String newEmail);
+
 }

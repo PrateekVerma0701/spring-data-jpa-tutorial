@@ -28,6 +28,16 @@ public class SpringDataJpaQueryApplication implements CommandLineRunner {
 		getPersonInfoByFirstNameAndEmail();
 
 		getPersonInfoByLastNameOrFirstName();
+
+		updatePersonEmailById();
+	}
+
+	private void updatePersonEmailById() {
+		int id = 5;
+		String newEmail = "poorva.tripathi@yahoo.com";
+		peopleMangementService.updatePersonEmailById(id, newEmail);
+		System.out.println("Update email id successfull for perosn id : " + id);
+
 	}
 
 	private void getPersonInfoByLastNameOrFirstName() {

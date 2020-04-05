@@ -2,6 +2,9 @@ package com.prateek.people.management.app.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -23,5 +26,10 @@ public interface PeopleManagementRepositry extends CrudRepository<Person, Intege
 	@Query(value = "SELECT p FROM Person p WHERE p.firstName=:firstname AND p.lastName=:lastname")
 	List<Person> getPersonInfoByLastNameOrFirstName(@Param("lastname") String lastname,
 			@Param("firstname") String firstName);
+
+	@Transactional
+	@Modifying
+	@Query("UPDATE Person set email=:newEmail WHERE id=:personId")
+	void updatePersonEmailById(@Param("personId") int id, @Param("newEmail") String newEmail);
 
 }
