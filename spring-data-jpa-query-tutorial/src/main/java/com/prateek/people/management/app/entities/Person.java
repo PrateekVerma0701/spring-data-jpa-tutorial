@@ -21,9 +21,6 @@ import lombok.Setter;
 @Entity
 @Table(name = "person_table")
 @DynamicUpdate
-@NamedQueries(value = {
-		@NamedQuery(name = "Person.getPersonInfoByLastName", query = "SELECT p FROM Person p WHERE p.lastName = ?1"),
-		@NamedQuery(name = "Person.getPersonInfoByFirstNameAndEmail", query = "SELECT p FROM Person p WHERE p.firstName = ?1 AND p.email = ?2") })
 public class Person {
 
 	public Person() {
